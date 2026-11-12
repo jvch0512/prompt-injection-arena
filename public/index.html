@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prompt Injection Arena</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">&#9889;</span> Prompt Injection Arena <small>break the simulated LLM</small></div>
+  <nav><button id="tab-play" class="tab on">Play</button><button id="tab-lab" class="tab">Red team lab</button></nav>
+</header>
+
+<div id="play" class="layout">
+  <aside class="levels"><h2>Levels</h2><div id="levels"></div></aside>
+
+  <section class="chat">
+    <div class="level-head"><h1 id="l-title"></h1><p id="l-scenario" class="mute"></p><p id="l-objective" class="objective"></p><div id="l-badges" class="badges"></div></div>
+    <div id="log" class="log"></div>
+    <div id="docwrap" class="docwrap hidden"><label for="doc">Document the assistant will summarize (not filtered)</label><textarea id="doc" rows="3" maxlength="3000" placeholder="Paste or write the document here..."></textarea></div>
+    <form id="form" class="composer"><input id="msg" maxlength="600" autocomplete="off" placeholder="Type your attack..."><button>Send</button></form>
+  </section>
+
+  <aside class="side">
+    <h2>Capture the flag</h2>
+    <form id="flagform" class="flagform"><input id="flag" maxlength="64" autocomplete="off" placeholder="Paste the flag you extracted"><button>Submit</button></form>
+    <div id="flagres" class="flagres"></div>
+    <h2>Hints</h2>
+    <div class="hintbtns"><button class="hint" data-n="1">Hint 1</button><button class="hint" data-n="2">Hint 2</button><button class="hint" data-n="3">Hint 3</button></div>
+    <div id="hints" class="hints"></div>
+    <div id="lesson" class="lesson hidden"></div>
+  </aside>
+</div>
+
+<div id="lab" class="lab hidden">
+  <p class="mute">An automated attack corpus runs against every level with fresh random secrets. <b class="c-leak">LEAK</b> means the secret came out in full, <b class="c-part">partial</b> means a fragment did, <b class="c-blk">blocked</b> means the input filter stopped it, and a dash means the model refused.</p>
+  <div id="matrix"></div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

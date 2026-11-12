@@ -1,0 +1,33 @@
+:root{--bg:#0d1117;--panel:#151b26;--line:#222c3d;--text:#dde5f3;--mute:#8090aa;--accent:#f5c542;--ok:#34d399;--bad:#f87171}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(900px 500px at 10% -10%,#1d2540,var(--bg) 60%);color:var(--text);font:14px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;min-height:100vh}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:18px}.brand small{color:var(--mute);font-weight:400;margin-left:8px}.logo{color:var(--accent)}
+.tab{background:none;border:1px solid var(--line);color:var(--mute);padding:6px 14px;border-radius:8px;cursor:pointer;margin-left:6px}.tab.on{color:var(--text);background:#1b2438;border-color:#33425f}
+.layout{display:grid;grid-template-columns:230px 1fr 300px;gap:14px;padding:16px 24px}
+.levels,.chat,.side{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px}
+h2{margin:0 0 10px;font-size:12px;text-transform:uppercase;letter-spacing:.7px;color:var(--mute)}
+.lv{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:9px;cursor:pointer;border:1px solid transparent;margin-bottom:6px}
+.lv:hover{background:#1a2336}.lv.on{background:#1d2740;border-color:#33425f}
+.num{width:26px;height:26px;border-radius:8px;background:#222c3d;display:grid;place-items:center;font-weight:700;flex:none}.lv.solved .num{background:var(--ok);color:#052e1f}
+.lv .t{font-weight:600}.lv .s{color:var(--mute);font-size:12px}
+.level-head h1{margin:0;font-size:20px}.mute{color:var(--mute);margin:4px 0}.objective{margin:8px 0;padding:8px 10px;border-left:3px solid var(--accent);background:#1b2233;border-radius:0 8px 8px 0}
+.badges{display:flex;gap:6px;flex-wrap:wrap}.badge{font-size:11px;padding:2px 8px;border-radius:999px;background:#222c3d;color:#b8c5de}.badge.on{background:#3a2a0b;color:#fcd34d}
+.log{height:340px;overflow:auto;margin:12px 0;padding:6px;background:#0f1520;border:1px solid var(--line);border-radius:10px}
+.msg{max-width:82%;padding:8px 12px;border-radius:12px;margin:8px 0;white-space:pre-wrap;word-break:break-word}
+.msg.me{margin-left:auto;background:#24407a}.msg.bot{background:#1e2738}.msg.sys{background:#3b1d1d;color:#fecaca;font-size:13px}.msg.red{background:#3a2a0b;color:#fde68a}
+.docwrap label{display:block;font-size:12px;color:var(--mute);margin-bottom:4px}
+textarea,input{width:100%;background:#0f1520;color:var(--text);border:1px solid #2a364d;border-radius:9px;padding:9px 11px;font:inherit}
+.docwrap{margin-bottom:10px}.hidden{display:none}
+.composer,.flagform{display:flex;gap:8px}
+button{cursor:pointer;border:0;border-radius:9px;padding:9px 16px;font-weight:700;background:var(--accent);color:#2a1f00}button.hint{background:#222c3d;color:var(--text);padding:6px 12px}
+.hintbtns{display:flex;gap:6px}.hints{margin-top:10px}.hints p{margin:6px 0;padding:8px 10px;background:#1b2233;border-radius:8px;font-size:13px}
+.flagres{margin:8px 0 18px;min-height:20px;font-weight:600}.flagres.ok{color:var(--ok)}.flagres.no{color:var(--bad)}
+.lesson{margin-top:14px;padding:12px;border:1px solid #1f6f50;background:#0d2a21;border-radius:10px;font-size:13px}.lesson h3{margin:0 0 6px;color:var(--ok);font-size:13px}.lesson code{display:block;margin:6px 0;color:#a7f3d0;font-size:12px;white-space:pre-wrap}
+.lab{padding:16px 24px}
+table{border-collapse:collapse;width:100%;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:center}th:first-child,td:first-child{text-align:left}th{color:var(--mute);font-size:12px;font-weight:600}
+td.leak{background:#4c1316;color:#fecaca;font-weight:800}td.partial{background:#47340a;color:#fde68a;font-weight:700}td.blocked{background:#14243f;color:#93c5fd}td.refused{color:#566580}
+.cat{color:var(--mute);font-size:11px;margin-left:6px}.c-leak{color:#fca5a5}.c-part{color:#fcd34d}.c-blk{color:#93c5fd}
+tfoot td{font-weight:800}
+@media(max-width:1100px){.layout{grid-template-columns:1fr}}
