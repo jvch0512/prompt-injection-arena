@@ -8,7 +8,7 @@
     "build": "tsc",
     "start": "tsc && node dist/src/main.js",
     "redteam": "tsc && node dist/src/redteam-cli.js",
-    "test": "tsc && node --test dist/test/arena.test.js",
+    "test": "tsc && node --test 'dist/test/**/*.test.js'",
     "lint": "tsc --noEmit"
   },
   "repository": "github:jvch0512/prompt-injection-arena",
